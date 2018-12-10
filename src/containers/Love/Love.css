@@ -1,0 +1,11 @@
+.match{
+    background-color: green
+}
+
+.semi{
+    background-color: yellow;
+}
+
+.no-match{
+    background-color: red;
+}

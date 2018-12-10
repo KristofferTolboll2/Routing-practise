@@ -1,0 +1,40 @@
+
+
+.Blog ul{
+
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+.Blog li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.Blog a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+
+.Blog a:hover{
+    color: rgb(90, 14, 14);
+    transition: 0.3s
+    ease;
+  background: #ffffff;
+  text-decoration: none;
+  border-top: 4px solid #86111152;
+  border-bottom: 4px solid #86111152;
+  padding: 20px 4px;
+  margin: 0px 0px;
+}
+
+
+
+.Blog a.active{
+    color: rgb(172, 51, 3);
+
+}
+
