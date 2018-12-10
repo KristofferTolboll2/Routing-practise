@@ -8,18 +8,12 @@ import Love from './containers/Love/Love';
 
 class App extends Component {
   state = {
-    show: false
-  }
-  modeHandler = () =>{
-    this.setState( prevState =>{
-      return {show: !prevState.show}
-    })
   }
 
   render() {
     return (
       <div>
-    <button onClick={this.modeHandler}>Toggle Mode</button>
+ 
         <Love />
       </div>
     );

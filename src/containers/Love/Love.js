@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import './Love.css'
 import  Match from './Matches/Match'
+import MatchWrapper from './HOC/MatchWrapper';
 
 class Love extends Component{
    
-
     state= {
         inputName: '',
         inputSname: '',
@@ -42,8 +42,14 @@ render(){
         return(
 
             <div className={"main-div " + (this.state.percentage > 75 && this.state.showResult ? "match " : ' ') + (this.state.percentage > 50  && this.state.percentage < 75 && this.state.showResult === true ? 'semi ' : ' ') + (this.state.percentage < 50 && this.state.showResult ? 'no-match': '')}>
-        
-                      <Match 
+
+                    <button onClick={this.findMatchHandler}>Find love!</button>
+                    <input type="text" value={this.state.inputName} onChange={(event) => this.setState({inputName: event.target.value, showResult: false})} placeholder="enter your name"/>
+                    <input type="text" value={this.state.inputSname} onChange={(event) => this.setState({inputSname: event.target.value, showResult: false})} placeholder="enter your name"/>
+
+
+                    
+                    <Match
                     inputName={this.state.inputName}
                     inputSname={this.state.inputSname}
                     percentage={this.state.percentage}
