@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import MatchWrapper from "../HOC/MatchWrapper";
+import Success from '../Displays/Succes/Succes'
+import Mediocre from '../Displays/Mediocore/Mediocre'
+import Failure from '../Displays/Failure/Failure'
 
-const match = props => {
-  console.log(props.type)
+
+const match = (props, type) => {
+  console.log(type) 
+  let display = ""
+  if(type="succes"){
+    display = <Success {...props} />
+  } else if(type="mediocore"){
+    display=<Mediocre {...props}/>
+  }else{
+    display=<Failure {...props} />
+  }
   return (
     <div>
-      {props.show ? (
-        <div>
-          <h1>Hello!</h1>
-          <p>{props.inputName} Du har sgu scoret en jackpot</p>
-          <p>{props.inputSname} Er sgu en laks udover det sædvanelige!</p>
-          <p>I har scorede hele {props.percentage} procent</p>
-          <p>Jeg synes du skulle invitere hende på data med det samme</p>
+      {props.show && 
+      <div className="match"> 
+        {display}
         </div>
-      ) : null}
+      }
     </div>
   );
 };

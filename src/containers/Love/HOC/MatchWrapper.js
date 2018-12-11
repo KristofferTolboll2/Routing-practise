@@ -8,14 +8,14 @@ const MatchWrapper = WrappedComponent => (props) => {
       type = "succes";
       break;
     case percentage > 50 && 75 >= percentage:
-      type = "mediocore";
+      type = "mediocre";
       break;
     case percentage <= 50:
       type = "failure123";
       break;
   }
 
-  return show && <WrappedComponent {...props, type} />
+  return show && <WrappedComponent {...props} type={type} />
 }
 
 export default MatchWrapper;
